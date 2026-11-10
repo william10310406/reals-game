@@ -8,15 +8,15 @@ import Game.Levels.Limits.L07_InvLeInv
 import Game.Levels.Limits.L08_TendstoInv
 
 World "Limits"
-Title "Limits"
+Title "Limits in ℚ"
 
 Introduction "
-A sequence tends to `L` when its terms get as close to `L` as you want.
+A sequence of rationals tends to `L` when its terms get as close to `L` as you want.
 
 You will prove the limit of constants and of sums, see that convergent sequences are Cauchy,
 and finally prove that `1/(n+1)` tends to `0`.
 "
 
 Conclusion "
-You finished the game. Everything here rests on theorems you proved yourself.
+These were limits of sequences of rationals. Next: `ℝ` gets `*` and `≤`, and then limits in `ℝ`.
 "

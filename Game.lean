@@ -6,6 +6,7 @@ import Game.Levels.Rationals
 import Game.Levels.Reals
 import Game.Levels.Inequalities
 import Game.Levels.Limits
+import Game.Levels.RealArith
 
 Title "Build the Reals"
 
@@ -40,7 +41,7 @@ Info "
 
 Building `ℤ`, `ℚ` and `ℝ` as quotients needs proofs that the definitions are well defined.
 Those plumbing proofs are in `Game/MyInt`, `Game/MyRat` and `Game/MyReal` of the repository.
-Some of them use Lean's own `Nat`, `Int` and the `omega`/`grind` tactics as a checking tool.
+Some of them use Lean's own `Nat`, `Int`, `Rat` and the `omega`/`grind` tactics as a checking tool.
 The levels never use them.
 
 ## Progress
@@ -64,6 +65,7 @@ CaptionLong "Build the naturals, integers, rationals and reals yourself. Then pr
 
 -- The worlds form one line. Inequalities only needs Rationals, but comes after Reals.
 Dependency Reals → Inequalities
+Dependency Limits → RealArith
 
 /-! Build the game. Shows warnings if it found a problem with your game. -/
 MakeGame

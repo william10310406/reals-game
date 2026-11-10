@@ -36,8 +36,8 @@ Statement tendsto_invSucc : Tendsto invSucc 0 := by
     exact le_trans _ 0 _ h0 (eps_nonneg k)
 
 Conclusion "
-**You did it.** You started from nothing but logic, and built `ℕ`, `ℤ`, `ℚ` and `ℝ`.
-You proved rules of inequalities and your first limits, using only theorems you proved yourself.
+A limit computed by hand: `1/(n+1) → 0`, using only theorems you proved yourself.
+So far all of this happened in `ℚ`. Next you make `ℝ` a full number system.
 "
 
 NewTheorem MyRat.invSucc_apply

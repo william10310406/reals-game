@@ -11,7 +11,7 @@ import Game.Levels.Inequalities.L10_IntNonnegMul
 import Game.Levels.Inequalities.L11_NonnegMul
 
 World "Inequalities"
-Title "Inequalities"
+Title "Inequalities in ℚ"
 
 Introduction "
 Analysis is mostly inequalities. Here you prove the rules for `≤` on `ℚ`:
@@ -19,5 +19,5 @@ adding to both sides, flipping signs, antisymmetry, and products.
 "
 
 Conclusion "
-You can now work with inequalities like a mathematician. Next: limits.
+You can now work with inequalities in `ℚ`. Next: limits of sequences of rationals.
 "
