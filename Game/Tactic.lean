@@ -16,13 +16,19 @@ macro "use " x:term : tactic => `(tactic| refine ⟨$x, ?_⟩)
 the induction hypothesis is `hd`. -/
 syntax (name := inductionWith) "induction " term " with " ident ppSpace ident : tactic
 
+set_option hygiene false in
 macro_rules
   | `(tactic| induction $x:term with $d:ident $h:ident) =>
-    `(tactic| (induction $x:term; case' succ $d:ident $h:ident => skip; case' zero => skip))
+    `(tactic| induction $x:term with
+      | zero => ?_
+      | succ $d:ident $h:ident => ?_)
 
 /-- `cases n with d` splits into the cases `0` and `succ d`. -/
 syntax (name := casesWith) "cases " term " with " ident : tactic
 
+set_option hygiene false in
 macro_rules
   | `(tactic| cases $x:term with $d:ident) =>
-    `(tactic| (cases $x:term; case' succ $d:ident => skip; case' zero => skip))
+    `(tactic| cases $x:term with
+      | zero => ?_
+      | succ $d:ident => ?_)
