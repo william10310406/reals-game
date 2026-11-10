@@ -9,14 +9,28 @@ Play: <https://adam.math.hhu.de/#/g/william10310406/reals-game>
 
 ## Worlds
 
-0. Tutorial
-1. Logic
-2. Naturals
-3. Integers
-4. Rationals
-5. Cauchy sequences and Reals
-6. Inequalities
-7. Limits
+| # | World | Levels | What you build or prove |
+|---|---|---|---|
+| 0 | Tutorial | 6 | goals, hypotheses, error messages; `exact`, `rfl`, `rw` |
+| 1 | Logic | 15 | `→ ∧ ∨ ¬ ∀ ∃` |
+| 2 | Naturals | 17 | `MyNat` from `0` and `succ`; induction; `+`, `*`, `≤` |
+| 3 | Integers | 21 | `MyInt` as pairs `a - b` up to `a + d = c + b`; ring rules, order |
+| 4 | Rationals | 13 | `MyRat` as `frac a b` up to cross-multiplication; `+`, `-`, `≤` |
+| 5 | Cauchy sequences and Reals | 12 | Cauchy sequences, `Close`, `MyReal` as a quotient, addition |
+| 6 | Inequalities | 11 | rules for `≤` on `ℚ`: signs, antisymmetry, products |
+| 7 | Limits | 8 | limits of constants and sums, convergent ⇒ Cauchy, `1/(n+1) → 0` |
+
+103 levels. Each world depends on the one before.
+
+## How it is built
+
+* `Game/MyNat`, `Game/MyInt`, `Game/MyRat`, `Game/MyReal`: definitions and the computation rules
+  the player may use (`add_zero`, `mk_add_mk`, `frac_eq`, ...).
+* Quotients need well-definedness proofs. These plumbing proofs use Lean's own `Nat`/`Int`
+  and `omega`/`grind` as a checking tool. The levels never use them: players only get the
+  computation rules and the theorems they proved.
+* `Game/Tactic.lean`: `use`, and `induction n with d hd` / `cases n with d` macros.
+* The game depends on `lean4game`'s `server/` at tag `v4.35.0` (see `lakefile.lean` for why).
 
 ## Building
 
