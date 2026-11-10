@@ -1,4 +1,4 @@
-import GameApi
+import GameServer
 import Game.Doc
 
 /-!

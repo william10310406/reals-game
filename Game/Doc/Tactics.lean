@@ -1,4 +1,4 @@
-import GameApi
+import GameServer
 
 /--
 `exact h` closes the goal when `h` is exactly the goal.
