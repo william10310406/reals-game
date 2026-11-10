@@ -1,22 +1,28 @@
-# Game Skeleton
+# Build the Reals
 
-This is a template for creating a game with [leangame](https://github.com/leanprover-community/lean4game/). It contains a few sample levels plus the files needed for a local development setup.
+A [Lean 4](https://lean-lang.org) game for the [lean4game](https://github.com/leanprover-community/lean4game) server.
 
-The documentation about how to use this template are at the [lean4game repository](https://github.com/leanprover-community/lean4game/):
+You build the natural numbers, the integers, the rationals and the reals yourself.
+Then you prove inequalities and limits. The game uses only Lean core, no Mathlib.
 
-- [Creating a new game](https://github.com/leanprover-community/lean4game/blob/main/doc/create_game.md)
-  - [Updating an existing game](https://github.com/leanprover-community/lean4game/blob/main/doc/update_game.md)
-  - [Running a game locally](https://github.com/leanprover-community/lean4game/blob/main/doc/running_locally.md)
+Play: <https://adam.math.hhu.de/#/g/william10310406/reals-game>
 
-## Quick start
+## Worlds
 
-- Log into GitHub and click the "Use this template" > "Create a new repository" button.
-- Clone your newly created repo to your machine and open it with VSCode.
-- `Ctrl + Shift + P` and enter `Dev Containers: Reopen in Container`
-- The server starts automatically, once it's started you should be able to play your game at http://localhost:3000.
+0. Tutorial
+1. Logic
+2. Naturals
+3. Integers
+4. Rationals
+5. Cauchy sequences and Reals
+6. Inequalities
+7. Limits
 
-## Contribute
+## Building
 
-This repo is created as a subtree of https://github.com/hhu-adam/leangame.
+The GitHub Action builds the game. To publish a new version, wait for a green run,
+then open <https://adam.math.hhu.de/import/trigger/william10310406/reals-game>.
 
-Any issues, PRs and other changes should be made to the parent repo.
+## License
+
+Apache 2.0, see `LICENSE`. Third-party parts are listed in `NOTICE`.

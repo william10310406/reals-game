@@ -1,19 +1,11 @@
 import GameApi
 
-/-- The way to proof reflexivity. -/
-TacticDoc rfl
+/--
+`exact h` closes the goal when `h` is exactly the goal.
 
-/-- To change the goal using equalities. -/
-TacticDoc rw
+## Examples
 
-/-- Can be proven by an existing result. -/
+* Goal `P`, hypothesis `hp : P`: `exact hp` closes the goal.
+* Goal `Q`, hypotheses `f : P → Q` and `hp : P`: `exact f hp` closes the goal.
+-/
 TacticDoc exact
-
-/-- Introduce an auxilary result. -/
-TacticDoc «have»
-
-/-- Assume the premise of an induction. -/
-TacticDoc intro
-
-/-- Use an existing result. -/
-TacticDoc apply
