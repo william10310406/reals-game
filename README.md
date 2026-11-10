@@ -23,8 +23,9 @@ Play: <https://adam.math.hhu.de/#/g/william10310406/reals-game>
 | 8 | Arithmetic in ℝ | 19 | `0`, `1`, `-`, `*` on `ℝ`, `ℚ` inside `ℝ`; ring laws |
 | 9 | Order in ℝ | 24 | `≤` on `ℝ`: total order, fits with `+` and `*`; `abs`, triangle inequality |
 | 10 | Inequalities in ℝ | 13 | rules of `≤` and `abs` on `ℝ`; Archimedean property |
+| 11 | Limits in ℝ | 9 | limits of sequences of reals: constants, sums, uniqueness, squeeze theorem |
 
-159 levels. Each world depends on the one before.
+168 levels. Each world depends on the one before.
 
 ## How it is built
 

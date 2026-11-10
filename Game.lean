@@ -9,6 +9,7 @@ import Game.Levels.Limits
 import Game.Levels.RealArith
 import Game.Levels.RealOrder
 import Game.Levels.RealIneq
+import Game.Levels.RealLimits
 
 Title "Build the Reals"
 
@@ -70,6 +71,7 @@ Dependency Reals → Inequalities
 Dependency Limits → RealArith
 Dependency RealArith → RealOrder
 Dependency RealOrder → RealIneq
+Dependency RealIneq → RealLimits
 
 /-! Build the game. Shows warnings if it found a problem with your game. -/
 MakeGame

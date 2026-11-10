@@ -7,3 +7,4 @@ import Game.Doc.Limits
 import Game.Doc.RealArith
 import Game.Doc.RealOrder
 import Game.Doc.RealIneq
+import Game.Doc.RealLimits
