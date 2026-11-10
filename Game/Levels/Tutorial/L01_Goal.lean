@@ -5,10 +5,10 @@ Level 1
 Title "The goal"
 
 Introduction "
-Look at the panel on the right.
+Look at the panel in the middle.
 
-* The line with `⊢` is the **goal**. It is what you must prove.
-* The lines above it are **hypotheses**. They are what you know.
+* The **goal** is what you must prove. In the editor it comes after `⊢`.
+* The **hypotheses** (assumptions) are what you know.
 
 Here `hp : P` says: `hp` is a proof of `P`.
 The goal is `P`. So `hp` is exactly what you need.

@@ -1,4 +1,6 @@
 import GameServer
+import Game.Tactic
+import Game.MyNat.Definition
 import Game.Doc
 
 /-!
