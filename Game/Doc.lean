@@ -8,3 +8,4 @@ import Game.Doc.RealArith
 import Game.Doc.RealOrder
 import Game.Doc.RealIneq
 import Game.Doc.RealLimits
+import Game.Doc.Complete

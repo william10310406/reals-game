@@ -3,7 +3,8 @@
 A [Lean 4](https://lean-lang.org) game for the [lean4game](https://github.com/leanprover-community/lean4game) server.
 
 You build the natural numbers, the integers, the rationals and the reals yourself.
-Then you make `ℝ` a full number system and prove inequalities and limits in it.
+Then you make `ℝ` a full number system, prove inequalities and limits in it,
+and prove that `ℝ` is complete.
 The game uses only Lean core, no Mathlib.
 
 Play: <https://adam.math.hhu.de/#/g/william10310406/reals-game>
@@ -24,8 +25,9 @@ Play: <https://adam.math.hhu.de/#/g/william10310406/reals-game>
 | 9 | Order in ℝ | 24 | `≤` on `ℝ`: total order, fits with `+` and `*`; `abs`, triangle inequality |
 | 10 | Inequalities in ℝ | 13 | rules of `≤` and `abs` on `ℝ`; Archimedean property |
 | 11 | Limits in ℝ | 9 | limits of sequences of reals: constants, sums, uniqueness, squeeze theorem |
+| 12 | Completeness | 9 | `choose`; every Cauchy sequence of reals converges |
 
-168 levels. Each world depends on the one before.
+177 levels. Each world depends on the one before.
 
 ## How it is built
 
@@ -37,6 +39,8 @@ Play: <https://adam.math.hhu.de/#/g/william10310406/reals-game>
   chosen Cauchy sequences. The levels never use them: players only get the computation rules and
   the theorems they proved.
 * `Game/Tactic.lean`: `use`, and `induction n with d hd` / `cases n with d` macros.
+  `Game/MyReal/Complete.lean`: `choose f hf using h`, a macro over `Classical.axiomOfChoice`.
+  Like `by_cases` (excluded middle), it uses Lean's classical axioms.
 * The game depends on `lean4game`'s `server/` at tag `v4.35.0` (see `lakefile.lean` for why).
 
 ## Building

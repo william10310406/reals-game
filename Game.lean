@@ -10,6 +10,7 @@ import Game.Levels.RealArith
 import Game.Levels.RealOrder
 import Game.Levels.RealIneq
 import Game.Levels.RealLimits
+import Game.Levels.Completeness
 
 Title "Build the Reals"
 
@@ -22,7 +23,8 @@ You will build the real numbers from nothing.
 You start with logic. Then you build the natural numbers.
 From them you build the integers, then the rationals.
 From rationals you build the reals, using Cauchy sequences.
-At the end you prove inequalities and limits.
+Then you make `ℝ` a full number system, prove inequalities and limits,
+and finally that `ℝ` is complete: every Cauchy sequence of reals converges.
 
 You only use Lean itself. No big library. Every fact you use, you proved yourself.
 
@@ -37,8 +39,10 @@ Info "
 * You may only use tactics and theorems from your inventory.
 * New items unlock as you play.
 * There is no `ring`, `linarith` or `simp` here.
-* Given rules (like `add_zero`, `mk_add_mk`, `frac_eq`) are the definitions of the operations.
-  Everything else in your inventory is a theorem you proved.
+* Given rules (like `add_zero`, `mk_add_mk`, `frac_eq`, `ofSeq_mul`) are the definitions of the
+  operations. Everything else in your inventory is a theorem you proved.
+* `by_cases` and `choose` use classical logic (excluded middle and choice), as ordinary
+  mathematics does.
 
 ## Behind the scenes
 
@@ -63,8 +67,8 @@ Clearing site data deletes it.
 "
 
 Languages "en"
-CaptionShort "From logic to limits."
-CaptionLong "Build the naturals, integers, rationals and reals yourself. Then prove inequalities and limits. Only Lean, no Mathlib."
+CaptionShort "From logic to the completeness of ℝ."
+CaptionLong "Build the naturals, integers, rationals and reals yourself. Then prove inequalities, limits, and that ℝ is complete. Only Lean, no Mathlib."
 
 -- The worlds form one line. Inequalities only needs Rationals, but comes after Reals.
 Dependency Reals → Inequalities
@@ -72,6 +76,7 @@ Dependency Limits → RealArith
 Dependency RealArith → RealOrder
 Dependency RealOrder → RealIneq
 Dependency RealIneq → RealLimits
+Dependency RealLimits → Completeness
 
 /-! Build the game. Shows warnings if it found a problem with your game. -/
 MakeGame
