@@ -2,6 +2,7 @@ import Game.Levels.Tutorial
 import Game.Levels.Logic
 import Game.Levels.Naturals
 import Game.Levels.Integers
+import Game.Levels.Rationals
 
 Title "Build the Reals"
 

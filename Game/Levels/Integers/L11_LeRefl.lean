@@ -23,7 +23,7 @@ Statement le_refl (x : ℤ) : x ≤ x := by
   rw [← zero_def, add_zero]
 
 Conclusion "
-You built the integers. Next: fractions.
+`le_refl` for `ℤ` is yours. A few more rules, and `ℤ` is ready for fractions.
 "
 
 NewTheorem MyInt.le_iff

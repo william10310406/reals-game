@@ -9,6 +9,16 @@ import Game.Levels.Integers.L08_MulComm
 import Game.Levels.Integers.L09_MulAdd
 import Game.Levels.Integers.L10_MulAssoc
 import Game.Levels.Integers.L11_LeRefl
+import Game.Levels.Integers.L12_ZeroAdd
+import Game.Levels.Integers.L13_NatMulOne
+import Game.Levels.Integers.L14_MulOne
+import Game.Levels.Integers.L15_ZeroMul
+import Game.Levels.Integers.L16_NegAdd
+import Game.Levels.Integers.L17_NegMul
+import Game.Levels.Integers.L18_MkMul
+import Game.Levels.Integers.L19_NonnegIff
+import Game.Levels.Integers.L20_NonnegAdd
+import Game.Levels.Integers.L21_NonnegMul
 
 World "Integers"
 Title "Integers"

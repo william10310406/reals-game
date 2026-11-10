@@ -297,3 +297,33 @@ TheoremDoc MyNat.le_refl as "le_refl" in "≤"
 * Goal `a ≤ c`: `apply le_trans a b c` gives the goals `a ≤ b` and `b ≤ c`.
 -/
 TheoremDoc MyNat.le_trans as "le_trans" in "≤"
+
+/--
+`mul_one a : a * 1 = a`.
+
+## Examples
+
+* `rw [MyNat.mul_one]` removes `* 1`.
+* `MyNat.mul_one 5 : 5 * 1 = 5`.
+-/
+TheoremDoc MyNat.mul_one as "mul_one" in "*"
+
+/--
+`one_ne_zero : 1 ≠ 0` in `ℕ`.
+
+## Examples
+
+* `exact MyNat.one_ne_zero` proves `(1 : ℕ) ≠ 0`.
+* `frac_eq hb MyNat.one_ne_zero` compares a fraction with `frac c 1`.
+-/
+TheoremDoc MyNat.one_ne_zero as "one_ne_zero" in "ℕ"
+
+/--
+`mul_ne_zero a b : a ≠ 0 → b ≠ 0 → a * b ≠ 0`.
+
+## Examples
+
+* `MyNat.mul_ne_zero b d hb hd : b * d ≠ 0`.
+* Needed when you add fractions: the new denominator is `b * d`.
+-/
+TheoremDoc MyNat.mul_ne_zero as "mul_ne_zero" in "ℕ"

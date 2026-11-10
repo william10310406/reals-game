@@ -205,3 +205,93 @@ TheoremDoc MyInt.mul_assoc as "mul_assoc (ℤ)" in "ℤ"
 * `le_refl 0 : (0 : ℤ) ≤ 0`.
 -/
 TheoremDoc MyInt.le_refl as "le_refl (ℤ)" in "ℤ"
+
+/--
+`zero_add x : 0 + x = x` for integers.
+
+## Examples
+
+* `rw [zero_add]` removes `0 +`.
+* `zero_add (mk 2 1) : 0 + mk 2 1 = mk 2 1`.
+-/
+TheoremDoc MyInt.zero_add as "zero_add (ℤ)" in "ℤ"
+
+/--
+`mul_one x : x * 1 = x` for integers.
+
+## Examples
+
+* `rw [mul_one]` removes `* 1`.
+* `rw [← one_def, mul_one]` turns `x * mk 1 0` into `x`.
+-/
+TheoremDoc MyInt.mul_one as "mul_one (ℤ)" in "ℤ"
+
+/--
+`zero_mul x : 0 * x = 0` for integers.
+
+## Examples
+
+* `rw [zero_mul]` changes `0 * y` to `0`.
+* `zero_mul (mk 3 0) : 0 * mk 3 0 = 0`.
+-/
+TheoremDoc MyInt.zero_mul as "zero_mul (ℤ)" in "ℤ"
+
+/--
+`neg_add x y : -(x + y) = -x + -y`.
+
+## Examples
+
+* `rw [neg_add]` spreads a minus over a sum.
+* `neg_add 1 2 : -(1 + 2) = -1 + -2`.
+-/
+TheoremDoc MyInt.neg_add as "neg_add (ℤ)" in "ℤ"
+
+/--
+`neg_mul x y : -x * y = -(x * y)`.
+
+## Examples
+
+* `rw [neg_mul]` moves the minus out of the product.
+* With `add_neg`: `x * y + -x * y = 0` by `rw [neg_mul, add_neg]`.
+-/
+TheoremDoc MyInt.neg_mul as "neg_mul (ℤ)" in "ℤ"
+
+/--
+`mk_mul_mk_zero b d : mk (b * d) 0 = mk b 0 * mk d 0`. A product of naturals, seen in `ℤ`.
+
+## Examples
+
+* `rw [mk_mul_mk_zero]` splits `mk (b * d) 0`.
+* `rw [← mk_mul_mk_zero]` joins `mk b 0 * mk d 0`.
+-/
+TheoremDoc MyInt.mk_mul_mk_zero as "mk_mul_mk_zero" in "ℤ"
+
+/--
+`nonneg_iff x : 0 ≤ x ↔ ∃ c : ℕ, x = mk c 0`. The nonnegative integers are the naturals.
+
+## Examples
+
+* `rw [nonneg_iff] at h`, then `obtain ⟨c, rfl⟩ := h` writes `x` as `mk c 0`.
+* Goal `0 ≤ mk 3 0`: `rw [nonneg_iff]`, then `use 3`.
+-/
+TheoremDoc MyInt.nonneg_iff as "nonneg_iff" in "ℤ"
+
+/--
+`nonneg_add x y : 0 ≤ x → 0 ≤ y → 0 ≤ x + y`.
+
+## Examples
+
+* `exact nonneg_add x y hx hy` proves `0 ≤ x + y`.
+* `nonneg_add (mk 1 0) (mk 2 0) h₁ h₂ : 0 ≤ mk 1 0 + mk 2 0`.
+-/
+TheoremDoc MyInt.nonneg_add as "nonneg_add (ℤ)" in "ℤ"
+
+/--
+`nonneg_mul_mk x n : 0 ≤ x → 0 ≤ x * mk n 0`.
+
+## Examples
+
+* `exact nonneg_mul_mk x n hx` proves `0 ≤ x * mk n 0`.
+* `nonneg_mul_mk a d ha : 0 ≤ a * mk d 0`.
+-/
+TheoremDoc MyInt.nonneg_mul_mk as "nonneg_mul_mk" in "ℤ"
