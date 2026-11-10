@@ -19,6 +19,9 @@ A long computation, step by step.
 Statement inv_le_inv (k n : ℕ) : k ≤ n → frac 1 (succ n) ≤ frac 1 (succ k) := by
   intro h
   Hint "Write `n = k + c`: `rw [MyNat.le_iff_exists_add] at {h}`, then `obtain ⟨c, rfl⟩ := {h}`."
+  Branch
+    rw [le_iff_nonneg]
+    Hint "First write `n = k + c`: `rw [MyNat.le_iff_exists_add] at {h}` and `obtain ⟨c, rfl⟩ := {h}`."
   rw [MyNat.le_iff_exists_add] at h
   obtain ⟨c, rfl⟩ := h
   Hint "Unfold `≤` and add the fractions."

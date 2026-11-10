@@ -19,6 +19,9 @@ Statement half (m : ℕ) (hm : m ≠ 0) : frac 1 (m + m) + frac 1 (m + m) = frac
   Hint "First get `m + m ≠ 0`:
   `have h2 : m + m ≠ 0 := by` and then, on new lines, `intro h`, `apply {hm}`,
   `exact MyNat.eq_zero_of_add_eq_zero m m h`."
+  Branch
+    rw [frac_add_frac]
+    Hint "Without a proof of `m + m ≠ 0`, `frac_add_frac` leaves you side goals. Prove `have h2 : m + m ≠ 0` first."
   have h2 : m + m ≠ 0 := by
     intro h
     apply hm

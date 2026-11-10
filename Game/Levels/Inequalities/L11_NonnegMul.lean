@@ -18,6 +18,9 @@ Statement nonneg_mul (x y : ℚ) : nonneg x → nonneg y → nonneg (x * y) := b
   rw [nonneg_frac hb] at hx
   rw [nonneg_frac hd] at hy
   Hint "Multiply with `frac_mul_frac`, then use `nonneg_frac`."
+  Branch
+    rw [frac_mul_frac hb hd]
+    Hint "Now unfold `nonneg` with `nonneg_frac (MyNat.mul_ne_zero b d {hb} {hd})`."
   rw [frac_mul_frac hb hd, nonneg_frac (MyNat.mul_ne_zero b d hb hd)]
   exact MyInt.nonneg_mul a c hx hy
 

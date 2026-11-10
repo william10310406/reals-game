@@ -20,6 +20,9 @@ Same idea as the last boss: ask for half, take `N₁ + N₂`.
 /-- The sum of two Cauchy sequences is Cauchy. -/
 Statement add_cauchy (s t : ℕ → ℚ) : IsCauchy s → IsCauchy t → IsCauchy (addSeq s t) := by
   intro hs ht k
+  Branch
+    obtain ⟨N1, h1⟩ := hs k
+    Hint "With `k` the two errors add up to `2/(k+1)`: too much. Ask for half: `{hs} (succ k + k)`."
   obtain ⟨N1, h1⟩ := hs (succ k + k)
   obtain ⟨N2, h2⟩ := ht (succ k + k)
   use N1 + N2

@@ -23,6 +23,9 @@ Statement close_refl (s : ℕ → ℚ) : Close s s := by
   use 0
   intro n hn
   Hint "`rw [sub_eq_add_neg, add_neg]` changes both parts at once."
+  Branch
+    constructor
+    Hint "Simplify first, so that both parts change: `rw [sub_eq_add_neg, add_neg]`."
   rw [sub_eq_add_neg, add_neg]
   constructor
   exact eps_nonneg k

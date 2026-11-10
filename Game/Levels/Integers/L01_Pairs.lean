@@ -21,6 +21,9 @@ Theorems about `ℕ` keep their names with `MyNat.` in front, like `MyNat.add_co
 /-- $a - b = (a + 1) - (b + 1)$. -/
 Statement (a b : ℕ) : mk a b = mk (a + 1) (b + 1) := by
   Hint "Turn the equality of integers into an equality of naturals: `rw [mk_eq]`."
+  Branch
+    rw [MyNat.add_comm a 1]
+    Hint "Rewriting inside `mk` is fine, but first turn the equation of integers into one of naturals: `rw [mk_eq]`."
   rw [mk_eq]
   Hint "Now it is about `ℕ`. Try `rw [MyNat.add_assoc]`, then swap `1 + b` with `MyNat.add_comm`."
   rw [MyNat.add_assoc, MyNat.add_comm 1 b]

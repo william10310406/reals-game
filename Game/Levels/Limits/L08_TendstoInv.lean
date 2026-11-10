@@ -19,6 +19,9 @@ Which `N` works for `1/(k+1)`? Take `N = k`.
 Statement tendsto_invSucc : Tendsto invSucc 0 := by
   intro k
   Hint "Use `use k`."
+  Branch
+    use 0
+    Hint "`N = 0` is too small: `1/(n+1) ≤ 1/(k+1)` needs `k ≤ n`. Use `use k`."
   use k
   intro n hn
   Hint "Clean up: `invSucc_apply`, then `sub_eq_add_neg`, `neg_zero`, `add_zero` for `x - 0`,

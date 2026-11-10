@@ -22,6 +22,9 @@ Then take `N₁ + N₂`, which is bigger than both.
 Statement close_trans (s t u : ℕ → ℚ) : Close s t → Close t u → Close s u := by
   intro hst htu k
   Hint "Ask for half: `obtain ⟨N1, h1⟩ := {hst} (succ k + k)`, and the same with `{htu}`."
+  Branch
+    obtain ⟨N1, h1⟩ := hst k
+    Hint "With `k` the two errors add up to `2/(k+1)`: too much. Ask for half: `{hst} (succ k + k)`."
   obtain ⟨N1, h1⟩ := hst (succ k + k)
   obtain ⟨N2, h2⟩ := htu (succ k + k)
   use N1 + N2

@@ -15,6 +15,9 @@ Statement neg_le_neg (a b : ℚ) : a ≤ b → -b ≤ -a := by
   intro h
   rw [le_iff_nonneg] at h ⊢
   Hint "Make the goal look like `{h}`: `sub_eq_add_neg`, `neg_neg`, `add_comm`, then `← sub_eq_add_neg`."
+  Branch
+    rw [sub_eq_add_neg]
+    Hint "Now `-(-b)` appears. Continue with `neg_neg`, `add_comm`, `← sub_eq_add_neg`."
   rw [sub_eq_add_neg, neg_neg, add_comm, ← sub_eq_add_neg]
   exact h
 

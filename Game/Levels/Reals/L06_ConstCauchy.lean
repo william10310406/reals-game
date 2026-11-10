@@ -26,6 +26,9 @@ Statement const_cauchy (c : ℚ) : IsCauchy (const c) := by
   use 0
   intro m n hm hn
   Hint "Compute the terms with `const_apply`, then `sub_eq_add_neg` and `add_neg`."
+  Branch
+    rw [sub_eq_add_neg]
+    Hint "Compute `const c m` and `const c n` first with `const_apply`, so that `add_neg` fits."
   rw [const_apply, const_apply, sub_eq_add_neg, add_neg]
   exact eps_nonneg k
 

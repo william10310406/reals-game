@@ -19,6 +19,9 @@ The denominator is a natural number, so only the numerator decides the sign.
 Statement nonneg_add (x y : ℚ) : nonneg x → nonneg y → nonneg (x + y) := by
   obtain ⟨a, b, hb, rfl⟩ := exists_frac x
   obtain ⟨c, d, hd, rfl⟩ := exists_frac y
+  Branch
+    rw [frac_add_frac hb hd]
+    Hint "Fine, but first name the hypotheses with `intro hx hy`."
   intro hx hy
   Hint "Add the fractions, then use `nonneg_frac` with the proof `MyNat.mul_ne_zero b d {hb} {hd}`."
   rw [frac_add_frac hb hd, nonneg_frac (MyNat.mul_ne_zero b d hb hd)]

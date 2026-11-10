@@ -16,6 +16,9 @@ This is new: in `ℕ` you could not undo `+`. In `ℤ` you can.
 Statement add_neg (x : ℤ) : x + -x = 0 := by
   obtain ⟨a, b, rfl⟩ := exists_mk x
   Hint "Compute `-mk a b` with `neg_mk`."
+  Branch
+    rw [zero_def]
+    Hint "Good, but `-mk a b` must become a pair too before you can add: `rw [neg_mk]`."
   rw [neg_mk]
   rw [mk_add_mk]
   Hint "Write `0` as a pair and use `mk_eq`."

@@ -15,6 +15,9 @@ Statement neg_mul (x y : ℤ) : -x * y = -(x * y) := by
   obtain ⟨a, b, rfl⟩ := exists_mk x
   obtain ⟨c, d, rfl⟩ := exists_mk y
   Hint "Compute both sides: `neg_mk`, `mk_mul_mk` twice, `neg_mk`."
+  Branch
+    rw [mk_mul_mk]
+    Hint "On the left, `-mk a b` is not a pair yet. Compute it first with `neg_mk`."
   rw [neg_mk, mk_mul_mk, mk_mul_mk, neg_mk]
   Hint "Finish with `mk_eq` and `ac_rfl`."
   rw [mk_eq]

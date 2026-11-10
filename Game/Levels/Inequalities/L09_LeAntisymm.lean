@@ -15,6 +15,9 @@ Statement le_antisymm (x y : ℚ) : x ≤ y → y ≤ x → x = y := by
   intro h1 h2
   rw [le_iff_nonneg] at h1 h2
   Hint "Write `x - y` in `{h2}` as `-(y - x)`: `rw [← neg_sub x y] at {h2}`."
+  Branch
+    rw [← neg_sub y x] at h1
+    Hint "Turn `{h2}` around instead: `rw [← neg_sub x y] at {h2}`. Then both are about `y - x`."
   rw [← neg_sub x y] at h2
   Hint "Now `have h := eq_zero_of_nonneg_neg (y - x) {h1} {h2}`."
   have h := eq_zero_of_nonneg_neg (y - x) h1 h2

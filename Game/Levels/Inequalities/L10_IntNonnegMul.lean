@@ -16,6 +16,9 @@ Statement nonneg_mul (x y : ℤ) : 0 ≤ x → 0 ≤ y → 0 ≤ x * y := by
   rw [nonneg_iff] at hx hy ⊢
   obtain ⟨c, rfl⟩ := hx
   obtain ⟨e, rfl⟩ := hy
+  Branch
+    use c + e
+    Hint "Not the sum: `mk c 0 * mk e 0` is `mk (c * e) 0`."
   use c * e
   Hint "`mk_mul_mk_zero` says exactly this."
   rw [mk_mul_mk_zero]

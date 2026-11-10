@@ -23,6 +23,9 @@ Statement frac_scale (a : ℤ) (b c : ℕ) (hb : b ≠ 0) (hc : c ≠ 0) :
     frac a b = frac (a * mk c 0) (b * c) := by
   Hint "Cross-multiply with `frac_eq`. The second denominator is `b * c`; its proof is
   `MyNat.mul_ne_zero b c {hb} {hc}`."
+  Branch
+    rw [MyInt.mul_comm]
+    Hint "Rearranging inside is fine, but first compare the two fractions with `frac_eq`."
   rw [frac_eq hb (MyNat.mul_ne_zero b c hb hc)]
   Hint "Split `mk (b * c) 0` with `MyInt.mk_mul_mk_zero`, then use `ac_rfl`."
   rw [MyInt.mk_mul_mk_zero]

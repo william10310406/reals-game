@@ -15,6 +15,9 @@ Its denominator must not be `0`.
 Statement succ_ne_zero (n : ℕ) : succ n ≠ 0 := by
   intro h
   Hint "Use `apply zero_ne_succ n`, then `rw [{h}]`."
+  Branch
+    apply zero_ne_succ 0
+    Hint "Use `n`, not `0`: `{h}` is about `succ n`."
   apply zero_ne_succ n
   rw [h]
 

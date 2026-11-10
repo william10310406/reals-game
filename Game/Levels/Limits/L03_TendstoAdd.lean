@@ -17,6 +17,9 @@ You already did the hard work in the Reals world (`close_add`, `close_trans`).
 Statement tendsto_add (s t : ℕ → ℚ) (a b : ℚ) :
     Tendsto s a → Tendsto t b → Tendsto (addSeq s t) (a + b) := by
   intro hs ht
+  Branch
+    intro k
+    Hint "No need to unfold by hand: `rw [tendsto_iff_close] at {hs} {ht} ⊢`, then `close_add` and `close_trans`."
   rw [tendsto_iff_close] at hs ht ⊢
   Hint "Chain two facts with `close_trans`:
   `close_add s (const a) t (const b) {hs} {ht}` and `close_const_add a b`."

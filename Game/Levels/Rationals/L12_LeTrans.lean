@@ -13,6 +13,9 @@ Introduction "
 /-- If $x \le y$ and $y \le z$, then $x \le z$. -/
 Statement le_trans (x y z : ℚ) : x ≤ y → y ≤ z → x ≤ z := by
   intro hxy hyz
+  Branch
+    rw [le_iff_nonneg] at hxy
+    Hint "Unfold all three at once: `rw [le_iff_nonneg] at hxy hyz ⊢`."
   rw [le_iff_nonneg] at hxy hyz ⊢
   Hint "Split `z - x` at `y`: `rw [← sub_add_sub x y z]`."
   rw [← sub_add_sub x y z]

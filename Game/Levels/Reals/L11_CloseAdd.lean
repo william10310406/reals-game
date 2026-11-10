@@ -17,6 +17,9 @@ the sum must stay the same real. That is: the sums are close.
 Statement close_add (s s' t t' : ℕ → ℚ) :
     Close s s' → Close t t' → Close (addSeq s t) (addSeq s' t') := by
   intro hs ht k
+  Branch
+    obtain ⟨N1, h1⟩ := hs k
+    Hint "With `k` the two errors add up to `2/(k+1)`: too much. Ask for half: `{hs} (succ k + k)`."
   obtain ⟨N1, h1⟩ := hs (succ k + k)
   obtain ⟨N2, h2⟩ := ht (succ k + k)
   use N1 + N2

@@ -17,6 +17,9 @@ Statement ofSeq_eq_of_tendsto (s : ℕ → ℚ) (L : ℚ) (hs : IsCauchy s) :
     Tendsto s L → MyReal.ofSeq s hs = MyReal.ofSeq (const L) (const_cauchy L) := by
   intro h
   Hint "Use `MyReal.ofSeq_eq`, then `← tendsto_iff_close`."
+  Branch
+    rw [MyReal.ofSeq_eq]
+    Hint "Now `Close s (const L)` is `Tendsto s L`: `rw [← tendsto_iff_close]`."
   rw [MyReal.ofSeq_eq, ← tendsto_iff_close]
   exact h
 

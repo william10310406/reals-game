@@ -17,6 +17,9 @@ Statement neg_add (x y : ℚ) : -(x + y) = -x + -y := by
   obtain ⟨a, b, hb, rfl⟩ := exists_frac x
   obtain ⟨c, d, hd, rfl⟩ := exists_frac y
   Hint "Compute: `frac_add_frac`, `neg_frac` three times, `frac_add_frac` again."
+  Branch
+    rw [neg_frac]
+    Hint "The left side is `-(sum)`. Add the fractions first with `frac_add_frac {hb} {hd}`."
   rw [frac_add_frac hb hd, neg_frac, neg_frac, neg_frac, frac_add_frac hb hd]
   Hint "Both sides have the same denominator. Fix the numerators with
   `MyInt.neg_add` and `MyInt.neg_mul` twice."

@@ -21,6 +21,9 @@ Statement add_comm (x y : ℚ) : x + y = y + x := by
   obtain ⟨a, b, hb, rfl⟩ := exists_frac x
   obtain ⟨c, d, hd, rfl⟩ := exists_frac y
   Hint "Add on both sides: `rw [frac_add_frac {hb} {hd}, frac_add_frac {hd} {hb}]`."
+  Branch
+    rw [frac_add_frac hb hd]
+    Hint "The right side is still a sum of fractions. Add it too: `frac_add_frac {hd} {hb}`."
   rw [frac_add_frac hb hd, frac_add_frac hd hb]
   Hint "Make the denominators equal with `MyNat.mul_comm d b`, then `ac_rfl`."
   rw [MyNat.mul_comm d b]

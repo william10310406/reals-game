@@ -15,6 +15,9 @@ Statement neg_add (x y : ℤ) : -(x + y) = -x + -y := by
   obtain ⟨a, b, rfl⟩ := exists_mk x
   obtain ⟨c, d, rfl⟩ := exists_mk y
   Hint "Compute: `mk_add_mk`, then `neg_mk` three times, then `mk_add_mk`."
+  Branch
+    rw [neg_mk]
+    Hint "The left side is `-(sum)`. Compute the sum first with `mk_add_mk`, then the negatives."
   rw [mk_add_mk, neg_mk, neg_mk, neg_mk, mk_add_mk]
 
 Conclusion "

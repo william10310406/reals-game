@@ -16,6 +16,9 @@ You proved `eq_zero_of_add_eq_zero` in the Naturals world. It helps here.
 Statement mul_ne_zero (a b : ℕ) : a ≠ 0 → b ≠ 0 → a * b ≠ 0 := by
   intro ha hb
   Hint "Split `b` with `cases b with d`."
+  Branch
+    cases a with d
+    Hint "Splitting `a` works too, but `mul_succ` works on the right factor. The hints follow `cases b with d`."
   cases b with d
   · Hint "`{hb} : 0 ≠ 0` is absurd. Use `exfalso`, then `apply {hb}`."
     exfalso

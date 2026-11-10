@@ -15,6 +15,9 @@ Introduction "
 /-- $x + (-x) = 0$ for rationals. -/
 Statement add_neg (x : ℚ) : x + -x = 0 := by
   obtain ⟨a, b, hb, rfl⟩ := exists_frac x
+  Branch
+    rw [zero_def]
+    Hint "Good. `-frac a b` must become a fraction too: `neg_frac`."
   rw [neg_frac, frac_add_frac hb hb, zero_def]
   Hint "Cross-multiply with `frac_eq`. The denominators are `b * b` and `1`."
   rw [frac_eq (MyNat.mul_ne_zero b b hb hb) MyNat.one_ne_zero]

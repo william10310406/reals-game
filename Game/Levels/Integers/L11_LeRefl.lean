@@ -18,6 +18,9 @@ Statement le_refl (x : ℤ) : x ≤ x := by
   Hint "Unfold `≤` with `rw [le_iff]`."
   rw [le_iff]
   Hint "Which natural number `c` works?"
+  Branch
+    use 1
+    Hint "`mk 1 0` is `1`, and `x ≠ x + 1`. Which `c` makes `x + mk c 0 = x`?"
   use 0
   Hint "`mk 0 0` is `0`: `rw [← zero_def]`. Then `add_zero`."
   rw [← zero_def, add_zero]

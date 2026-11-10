@@ -19,6 +19,9 @@ Statement nonneg_add (x y : ℤ) : 0 ≤ x → 0 ≤ y → 0 ≤ x + y := by
   obtain ⟨c, rfl⟩ := hx
   obtain ⟨e, rfl⟩ := hy
   Hint "Which natural number is the sum?"
+  Branch
+    use c
+    Hint "Not `c`: the sum `mk c 0 + mk e 0` is `mk (c + e) 0`."
   use c + e
   rw [mk_add_mk, MyNat.add_zero]
 

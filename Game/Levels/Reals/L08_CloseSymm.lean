@@ -15,6 +15,9 @@ Statement close_symm (s t : ℕ → ℚ) : Close s t → Close t s := by
   intro h
   intro k
   Hint "Get an `N` from `{h}`: `obtain ⟨N, hN⟩ := {h} k`."
+  Branch
+    use k
+    Hint "Which `N`? Get it from `{h}` first: `obtain ⟨N, hN⟩ := {h} k`."
   obtain ⟨N, hN⟩ := h k
   use N
   intro n hn

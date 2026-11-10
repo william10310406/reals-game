@@ -18,6 +18,9 @@ Statement close_const_add (a b : ℚ) : Close (addSeq (const a) (const b)) (cons
   use 0
   intro n hn
   Hint "Compute: `addSeq_apply`, then `const_apply` three times, then `sub_eq_add_neg` and `add_neg`."
+  Branch
+    rw [sub_eq_add_neg]
+    Hint "Compute the terms first (`addSeq_apply`, `const_apply`), so that `add_neg` fits."
   rw [addSeq_apply, const_apply, const_apply, const_apply, sub_eq_add_neg, add_neg]
   constructor
   exact eps_nonneg k

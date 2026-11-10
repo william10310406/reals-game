@@ -14,6 +14,9 @@ Note: `rw [h]` rewrites **every** copy of the pattern it found. Watch how many c
 Statement zero_mul (x : ℤ) : 0 * x = 0 := by
   obtain ⟨a, b, rfl⟩ := exists_mk x
   Hint "`rw [zero_def]` changes both `0`s."
+  Branch
+    rw [mul_comm]
+    Hint "Swapping does not help: `0` is still not a pair. Use `rw [zero_def, mk_mul_mk]`."
   rw [zero_def, mk_mul_mk]
   Hint "Use `MyNat.zero_mul`. Each use removes all copies of one product."
   rw [MyNat.zero_mul, MyNat.zero_mul, MyNat.add_zero]

@@ -15,6 +15,9 @@ We often need: if `n ≥ N₁ + N₂`, then `n ≥ N₁`. It starts with this.
 Statement le_add_right (a b : ℕ) : a ≤ a + b := by
   rw [le_iff_exists_add]
   Hint "Which number do you `use`?"
+  Branch
+    use a
+    Hint "Not `a`: which `c` gives `a + b = a + c`?"
   use b
   Hint "The goal is the same on both sides."
   rfl

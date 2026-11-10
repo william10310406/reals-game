@@ -18,6 +18,9 @@ Statement add_assoc (x y z : ℤ) : x + y + z = x + (y + z) := by
   Hint "Use `mk_add_mk` four times."
   rw [mk_add_mk, mk_add_mk, mk_add_mk, mk_add_mk]
   Hint "Now `rw [mk_eq]` and finish with `ac_rfl`."
+  Branch
+    rw [MyNat.add_assoc]
+    Hint "This works inside `mk`, but it is faster to `rw [mk_eq]` and finish with `ac_rfl`."
   rw [mk_eq]
   ac_rfl
 

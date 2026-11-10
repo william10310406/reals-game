@@ -15,6 +15,9 @@ Your old friend `MyNat.eq_zero_of_add_eq_zero` will help.
 /-- If $0 \le x$ and $0 \le -x$, then $x = 0$. -/
 Statement eq_zero_of_nonneg_neg (x : ℤ) : 0 ≤ x → 0 ≤ -x → x = 0 := by
   intro h1 h2
+  Branch
+    rw [nonneg_iff] at h1
+    Hint "Do `{h2}` too: `rw [nonneg_iff] at h1 h2`."
   rw [nonneg_iff] at h1 h2
   obtain ⟨c, rfl⟩ := h1
   obtain ⟨e, he⟩ := h2

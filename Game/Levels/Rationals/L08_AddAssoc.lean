@@ -24,6 +24,9 @@ Statement add_assoc (x y z : ℚ) : x + y + z = x + (y + z) := by
   obtain ⟨c, d, hd, rfl⟩ := exists_frac y
   obtain ⟨e, f, hf, rfl⟩ := exists_frac z
   Hint "Left side first: `rw [frac_add_frac {hb} {hd}, frac_add_frac (MyNat.mul_ne_zero b d {hb} {hd}) {hf}]`."
+  Branch
+    rw [add_comm]
+    Hint "Swapping does not help. Add the fractions with `frac_add_frac`."
   rw [frac_add_frac hb hd, frac_add_frac (MyNat.mul_ne_zero b d hb hd) hf]
   Hint "Now the right side: `rw [frac_add_frac {hd} {hf}, frac_add_frac {hb} (MyNat.mul_ne_zero d f {hd} {hf})]`."
   rw [frac_add_frac hd hf, frac_add_frac hb (MyNat.mul_ne_zero d f hd hf)]

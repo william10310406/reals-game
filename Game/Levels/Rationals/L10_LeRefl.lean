@@ -18,6 +18,9 @@ Statement le_refl (x : ℚ) : x ≤ x := by
   Hint "Unfold: `rw [le_iff_nonneg, sub_eq_add_neg]`."
   rw [le_iff_nonneg, sub_eq_add_neg]
   Hint "`add_neg`, then write `0` as a fraction with `zero_def`, then `nonneg_frac MyNat.one_ne_zero`."
+  Branch
+    rw [add_comm]
+    Hint "Now `add_neg` does not fit: it simplifies `x + -x`, not `-x + x`."
   rw [add_neg, zero_def, nonneg_frac MyNat.one_ne_zero]
   Hint (hidden := true) "The goal is `0 ≤ 0` in `ℤ`: `exact MyInt.le_refl 0`."
   exact MyInt.le_refl 0

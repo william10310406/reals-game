@@ -13,6 +13,9 @@ Introduction "
 /-- $-(y - x) = x - y$. -/
 Statement neg_sub (x y : ℚ) : -(y - x) = x - y := by
   Hint "`sub_eq_add_neg` twice, `neg_add`, `neg_neg`, `add_comm`."
+  Branch
+    rw [sub_eq_add_neg]
+    Hint "Only the first difference became a sum. Do the same for `x - y`, then `neg_add`."
   rw [sub_eq_add_neg, sub_eq_add_neg, neg_add, neg_neg, add_comm]
 
 Conclusion "

@@ -20,6 +20,9 @@ Statement add_comm (x y : ℤ) : x + y = y + x := by
   Hint "Now `y`: `obtain ⟨c, d, rfl⟩ := exists_mk y`."
   obtain ⟨c, d, rfl⟩ := exists_mk y
   Hint "Add the pairs on both sides: `rw [mk_add_mk, mk_add_mk]`."
+  Branch
+    rw [mk_add_mk]
+    Hint "That computed only the left side. The right side needs `mk_add_mk` too."
   rw [mk_add_mk, mk_add_mk]
   Hint "Swap the sums in `ℕ` with `MyNat.add_comm`."
   rw [MyNat.add_comm a c, MyNat.add_comm b d]

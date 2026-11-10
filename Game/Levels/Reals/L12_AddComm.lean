@@ -21,6 +21,9 @@ Statement add_comm (x y : ℝ) : x + y = y + x := by
   obtain ⟨s, hs, rfl⟩ := exists_ofSeq x
   obtain ⟨t, ht, rfl⟩ := exists_ofSeq y
   Hint "Add with `ofSeq_add` (twice), then compare with `ofSeq_eq`."
+  Branch
+    rw [ofSeq_add]
+    Hint "Only the left side was added. `ofSeq_add` again for the right side, then `ofSeq_eq`."
   rw [ofSeq_add, ofSeq_add, ofSeq_eq]
   intro k
   use 0

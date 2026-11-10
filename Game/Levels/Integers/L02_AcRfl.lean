@@ -17,6 +17,9 @@ It does not multiply out brackets.
 /-- $a + b + (c + d) = d + (b + a) + c$. -/
 Statement (a b c d : ℕ) : a + b + (c + d) = d + (b + a) + c := by
   Hint "Type `ac_rfl`."
+  Branch
+    rw [MyNat.add_comm a b]
+    Hint "You can reorder by hand, but `ac_rfl` does all of it at once."
   ac_rfl
 
 Conclusion "

@@ -22,6 +22,9 @@ Statement mul_assoc (x y z : ℤ) : x * y * z = x * (y * z) := by
   obtain ⟨c, d, rfl⟩ := exists_mk y
   obtain ⟨e, f, rfl⟩ := exists_mk z
   Hint "Use `mk_mul_mk` four times."
+  Branch
+    rw [mul_comm]
+    Hint "Swapping does not help here. Multiply out with `mk_mul_mk`."
   rw [mk_mul_mk, mk_mul_mk, mk_mul_mk, mk_mul_mk]
   rw [mk_eq]
   Hint "Four brackets like `(a * c + b * d) * e` need `MyNat.add_mul`,

@@ -14,6 +14,9 @@ The integer `1` is `mk 1 0` (theorem `one_def`).
 Statement mul_one (x : ℤ) : x * 1 = x := by
   obtain ⟨a, b, rfl⟩ := exists_mk x
   Hint "Write `1` as a pair with `one_def`, then multiply with `mk_mul_mk`."
+  Branch
+    rw [mul_comm]
+    Hint "Swapping does not help: `1` is still not a pair. Use `rw [one_def, mk_mul_mk]`."
   rw [one_def, mk_mul_mk]
   Hint "Clean up in `ℕ`: `MyNat.mul_one` twice, `MyNat.mul_zero` twice, then `MyNat.add_zero` and `MyNat.zero_add`."
   rw [MyNat.mul_one, MyNat.mul_one, MyNat.mul_zero, MyNat.mul_zero, MyNat.add_zero, MyNat.zero_add]

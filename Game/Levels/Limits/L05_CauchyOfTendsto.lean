@@ -17,6 +17,9 @@ Ask for half of `1/(k+1)`, and split `s m - s n` at `L`.
 Statement cauchy_of_tendsto (s : ℕ → ℚ) (L : ℚ) : Tendsto s L → IsCauchy s := by
   intro h k
   Hint "Ask for half: `obtain ⟨N, hN⟩ := {h} (succ k + k)`."
+  Branch
+    obtain ⟨N, hN⟩ := h k
+    Hint "With `k` the two errors add up to `2/(k+1)`: too much. Ask for half: `{h} (succ k + k)`."
   obtain ⟨N, hN⟩ := h (succ k + k)
   use N
   intro m n hm hn

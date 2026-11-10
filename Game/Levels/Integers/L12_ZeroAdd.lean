@@ -13,6 +13,9 @@ No pairs needed. Use theorems about `ℤ` you already have.
 /-- $0 + x = x$ for integers. -/
 Statement zero_add (x : ℤ) : 0 + x = x := by
   Hint "Swap the sum with `add_comm`, then use `add_zero`."
+  Branch
+    obtain ⟨a, b, rfl⟩ := exists_mk x
+    Hint "That works, but there is a short way without pairs: `rw [add_comm, add_zero]`."
   rw [add_comm, add_zero]
 
 Conclusion "

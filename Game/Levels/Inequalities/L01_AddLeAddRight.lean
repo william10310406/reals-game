@@ -15,6 +15,9 @@ These are the rules you use every day when you compute with inequalities.
 Statement add_le_add_right (a b c : ℚ) : a ≤ b → a + c ≤ b + c := by
   intro h
   Hint "Use `add_le_add` with `{h}` and `le_refl c`."
+  Branch
+    rw [le_iff_nonneg] at h ⊢
+    Hint "Unfolding works, but there is a shorter way: `add_le_add` with `{h}` and `le_refl c`."
   exact add_le_add a b c c h (le_refl c)
 
 Conclusion "

@@ -16,6 +16,9 @@ Recall: `x ≠ y` means `x = y → False`.
 /-- $1 \ne 0$ in $\mathbb{N}$. -/
 Statement one_ne_zero : (1 : ℕ) ≠ 0 := by
   Hint "Start with `intro h`."
+  Branch
+    rw [one_eq_succ_zero]
+    Hint "Good. Now `≠` means `→ False`: `intro h`."
   intro h
   Hint "Write `1` as `succ 0` in `{h}`."
   rw [one_eq_succ_zero] at h

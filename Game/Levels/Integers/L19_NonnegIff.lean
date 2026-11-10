@@ -19,6 +19,9 @@ Statement nonneg_iff (x : ℤ) : 0 ≤ x ↔ ∃ c : ℕ, x = mk c 0 := by
   · intro h
     obtain ⟨c, hc⟩ := h
     Hint "Use the same `{c}`."
+    Branch
+      use 0
+      Hint "Not `0`: `{hc}` already tells you what `x` is. Use `{c}`."
     use c
     Hint "Rewrite with `{hc}`, then `zero_add`."
     rw [hc, zero_add]

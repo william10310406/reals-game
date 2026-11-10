@@ -18,6 +18,9 @@ This is the same as `Close s (const L)`: theorem `tendsto_iff_close`.
 /-- The constant sequence $c, c, c, \dots$ tends to $c$. -/
 Statement tendsto_const (c : ℚ) : Tendsto (const c) c := by
   Hint "Use `rw [tendsto_iff_close]`, then a theorem from the Reals world."
+  Branch
+    intro k
+    Hint "That works, but the Reals world already did this. Use `rw [tendsto_iff_close]`, then `close_refl`."
   rw [tendsto_iff_close]
   exact close_refl (const c)
 

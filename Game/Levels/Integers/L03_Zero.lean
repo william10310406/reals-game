@@ -18,6 +18,9 @@ Statement mk_self (a : ℕ) : mk a a = 0 := by
   rw [zero_def]
   rw [mk_eq]
   Hint "Now `a + 0 = 0 + a` in `ℕ`. Use `MyNat.add_zero` and `MyNat.zero_add`, or `ac_rfl`."
+  Branch
+    rw [MyNat.zero_add]
+    Hint "Good. One `+ 0` is left: `MyNat.add_zero`."
   rw [MyNat.add_zero, MyNat.zero_add]
 
 Conclusion "
