@@ -62,5 +62,8 @@ Languages "en"
 CaptionShort "From logic to limits."
 CaptionLong "Build the naturals, integers, rationals and reals yourself. Then prove inequalities and limits. Only Lean, no Mathlib."
 
+-- The worlds form one line. Inequalities only needs Rationals, but comes after Reals.
+Dependency Reals → Inequalities
+
 /-! Build the game. Shows warnings if it found a problem with your game. -/
 MakeGame
