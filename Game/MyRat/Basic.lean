@@ -260,6 +260,8 @@ def nonneg (x : MyRat) : Prop :=
   Quotient.lift (fun p => (0 : MyInt) ≤ p.1)
     (fun p q h => propext ⟨nonneg_respects p q h, nonneg_respects q p (Setoid.symm h)⟩) x
 
+attribute [pp_nodot] nonneg
+
 instance : LE MyRat := ⟨fun x y => nonneg (y - x)⟩
 
 theorem le_iff_nonneg (x y : MyRat) : x ≤ y ↔ nonneg (y - x) := Iff.rfl

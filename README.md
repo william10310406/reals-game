@@ -22,8 +22,9 @@ Play: <https://adam.math.hhu.de/#/g/william10310406/reals-game>
 | 7 | Limits in ℚ | 8 | limits of constants and sums, convergent ⇒ Cauchy, `1/(n+1) → 0` |
 | 8 | Arithmetic in ℝ | 19 | `0`, `1`, `-`, `*` on `ℝ`, `ℚ` inside `ℝ`; ring laws |
 | 9 | Order in ℝ | 24 | `≤` on `ℝ`: total order, fits with `+` and `*`; `abs`, triangle inequality |
+| 10 | Inequalities in ℝ | 13 | rules of `≤` and `abs` on `ℝ`; Archimedean property |
 
-146 levels. Each world depends on the one before.
+159 levels. Each world depends on the one before.
 
 ## How it is built
 

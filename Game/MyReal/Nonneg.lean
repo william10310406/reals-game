@@ -66,6 +66,8 @@ theorem nonneg_ofSeq {s : MyNat → MyRat} {hs : MyRat.IsCauchy s} :
       ∀ k : MyNat, ∃ N : MyNat, ∀ n : MyNat, N ≤ n → -MyRat.frac 1 (MyNat.succ k) ≤ s n :=
   Iff.rfl
 
+attribute [pp_nodot] nonneg
+
 instance : LE MyReal := ⟨fun x y => nonneg (y - x)⟩
 
 theorem le_iff_nonneg (x y : MyReal) : x ≤ y ↔ nonneg (y - x) := Iff.rfl
