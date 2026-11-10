@@ -174,3 +174,16 @@ There is no induction hypothesis.
 * Goal `a + b = 0 → b = 0`: `cases b with d` gives the cases `b = 0` and `b = succ d`.
 -/
 TacticDoc cases
+
+/--
+`ac_rfl` proves an equation whose two sides only differ by the order and the brackets
+of `+` and of `*`. It uses `add_comm`, `add_assoc`, `mul_comm` and `mul_assoc`, which you proved.
+
+## Examples
+
+* Goal `a + b + c = c + (b + a)`: `ac_rfl` closes it.
+* Goal `a * b + c * d = d * c + b * a`: `ac_rfl` closes it.
+
+It does **not** multiply out brackets: `a * (b + c) = a * b + a * c` needs `mul_add`.
+-/
+TacticDoc ac_rfl

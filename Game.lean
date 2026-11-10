@@ -1,6 +1,7 @@
 import Game.Levels.Tutorial
 import Game.Levels.Logic
 import Game.Levels.Naturals
+import Game.Levels.Integers
 
 Title "Build the Reals"
 
