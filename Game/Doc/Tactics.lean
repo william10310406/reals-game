@@ -30,7 +30,8 @@ TacticDoc exact
 
 ## Common error
 
-`The rfl tactic failed`: the two sides are not the same. Rewrite them first with `rw`.
+`Tactic rfl failed: The left-hand side ... is not definitionally equal to the right-hand side`:
+the two sides are not the same. Rewrite them first with `rw`.
 -/
 TacticDoc rfl
 

@@ -4,6 +4,8 @@ import Game.Levels.Naturals
 import Game.Levels.Integers
 import Game.Levels.Rationals
 import Game.Levels.Reals
+import Game.Levels.Inequalities
+import Game.Levels.Limits
 
 Title "Build the Reals"
 
@@ -31,6 +33,15 @@ Info "
 * You may only use tactics and theorems from your inventory.
 * New items unlock as you play.
 * There is no `ring`, `linarith` or `simp` here.
+* Given rules (like `add_zero`, `mk_add_mk`, `frac_eq`) are the definitions of the operations.
+  Everything else in your inventory is a theorem you proved.
+
+## Behind the scenes
+
+Building `ℤ`, `ℚ` and `ℝ` as quotients needs proofs that the definitions are well defined.
+Those plumbing proofs are in `Game/MyInt`, `Game/MyRat` and `Game/MyReal` of the repository.
+Some of them use Lean's own `Nat`, `Int` and the `omega`/`grind` tactics as a checking tool.
+The levels never use them.
 
 ## Progress
 
