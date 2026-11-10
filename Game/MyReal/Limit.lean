@@ -17,7 +17,7 @@ def Tendsto (s : MyNat → ℚ) (L : ℚ) : Prop :=
 theorem tendsto_iff_close (s : MyNat → ℚ) (L : ℚ) : Tendsto s L ↔ Close s (const L) := Iff.rfl
 
 /-- The sequence `1/1, 1/2, 1/3, ...`. -/
-def invSucc : MyNat → ℚ := fun n => frac 1 (MyNat.succ n)
+noncomputable def invSucc : MyNat → ℚ := fun n => frac 1 (MyNat.succ n)
 
 theorem invSucc_apply (n : MyNat) : invSucc n = frac 1 (MyNat.succ n) := rfl
 
