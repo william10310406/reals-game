@@ -7,6 +7,7 @@ import Game.Levels.Reals
 import Game.Levels.Inequalities
 import Game.Levels.Limits
 import Game.Levels.RealArith
+import Game.Levels.RealOrder
 
 Title "Build the Reals"
 
@@ -66,6 +67,7 @@ CaptionLong "Build the naturals, integers, rationals and reals yourself. Then pr
 -- The worlds form one line. Inequalities only needs Rationals, but comes after Reals.
 Dependency Reals → Inequalities
 Dependency Limits → RealArith
+Dependency RealArith → RealOrder
 
 /-! Build the game. Shows warnings if it found a problem with your game. -/
 MakeGame

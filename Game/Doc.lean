@@ -5,3 +5,4 @@ import Game.Doc.MyRat
 import Game.Doc.MyReal
 import Game.Doc.Limits
 import Game.Doc.RealArith
+import Game.Doc.RealOrder
