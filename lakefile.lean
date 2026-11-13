@@ -12,6 +12,10 @@ level format matches the `server/` folder of the lean4game repository (tag `v4.3
 The newer standalone `hhu-adam/GameServer` writes a different level format
 (`theorems` instead of `lemmas`) that the public frontend cannot read yet.
 So this game uses the GameServer from the lean4game repository.
+
+The revision is a full commit hash, not the tag `v4.35.0`: upstream moved that tag on 2026-11-11
+to a commit whose `server/` has no lakefile. Commit 9f0aadc is an ancestor of upstream `main`.
+The other dependencies are pinned in the tracked `lake-manifest.json`; CI does not run `lake update`.
 -/
 
 /--
@@ -30,11 +34,13 @@ def LocalGameServer : Dependency := {
 Use the GameServer version from github.
 Deactivate local version with `lake update -R`.
 -/
+def gameServerRev : String := "9f0aadcc19cb9edc808ff29f38210cac3eec20d6"
+
 def RemoteGameServer : Dependency := {
   name := `GameServer
   scope := "hhu-adam"
-  src? := DependencySrc.git "https://github.com/leanprover-community/lean4game.git" leanVersion "server"
-  version := .git leanVersion
+  src? := DependencySrc.git "https://github.com/leanprover-community/lean4game.git" gameServerRev "server"
+  version := .git gameServerRev
   opts := ∅
 }
 
